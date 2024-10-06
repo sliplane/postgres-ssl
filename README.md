@@ -1,4 +1,4 @@
-[![GHCR Build Status](https://github.com/sliplane/docker-postgres/actions/workflows/ghcr.yml/badge.svg?branch=main)](https://github.com/sliplane/docker-postgres/actions/workflows/ghcr.yml)
+[![GHCR](https://github.com/sliplane/postgres-ssl/actions/workflows/ghcr.yml/badge.svg?branch=main)](https://github.com/sliplane/postgres-ssl/actions/workflows/ghcr.yml)
 
 # Postgres Docker Image with Self-Signed SSL Certs
 
