@@ -1,4 +1,4 @@
-image = ghcr.io/infrastructure-as-code/postgres
+image = ghcr.io/sliplane/postgres
 versions = \
 	debian \
 	alpine
