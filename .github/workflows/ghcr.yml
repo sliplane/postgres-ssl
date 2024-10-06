@@ -9,6 +9,7 @@ on:
     # build a new set of images weekly at 00:30hrs UTC so that we quickly
     # get updates from upstream images.
     - cron: "30 0 * * 6"
+  workflow_dispatch:
 env:
   REGISTRY: ghcr.io
   IMAGE: ghcr.io/${{ github.repository_owner }}/postgres
@@ -61,9 +62,9 @@ jobs:
       # build locally first before the multiarch build with buildx
       - name: Build image
         run: docker build --rm -f ${{ matrix.distro }}.Dockerfile
-               --build-arg base_image=${{ env.BASE_IMAGE }}:${{ matrix.version }}
-               --tag ${{ env.IMAGE }}:${{ matrix.version }}
-               .
+          --build-arg base_image=${{ env.BASE_IMAGE }}:${{ matrix.version }}
+          --tag ${{ env.IMAGE }}:${{ matrix.version }}
+          .
 
       - name: Test alpine image
         env:

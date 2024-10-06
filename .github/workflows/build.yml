@@ -2,6 +2,7 @@ name: Local Build & Test
 on:
   - push
   - pull_request
+  - workflow_dispatch
 env:
   IMAGE: ghcr.io/${{ github.repository_owner }}/postgres
   #BASE_IMAGE: public.ecr.aws/docker/library/postgres
@@ -49,9 +50,9 @@ jobs:
 
       - name: Build image
         run: docker build --rm -f ${{ matrix.distro }}.Dockerfile
-               --build-arg base_image=${{ env.BASE_IMAGE }}:${{ matrix.version }}
-               --tag ${{ env.IMAGE }}:${{ matrix.version }}
-               .
+          --build-arg base_image=${{ env.BASE_IMAGE }}:${{ matrix.version }}
+          --tag ${{ env.IMAGE }}:${{ matrix.version }}
+          .
 
       - name: Test alpine image
         env:
